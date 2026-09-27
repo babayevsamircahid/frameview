@@ -16,11 +16,13 @@ Frameview works with any clipboard image, not only Figma. It never talks to the 
 
 ## Usage
 
-1. Open the page you want to compare, usually something like `localhost:3000`.
-2. In Figma, select a frame and use **Copy as PNG**.
-3. Return to Chrome and press `Cmd+V` / `Ctrl+V`.
+1. Open the page you want to compare, on localhost or any `http`/`https` site.
+2. In Figma, select a frame and use **Copy as PNG** (`Ctrl+Shift+C` / `Cmd+Shift+C`).
+3. Return to Chrome, click the page, and press `Cmd+V` / `Ctrl+V`.
 4. The image appears as an overlay at 50% opacity.
 5. Use the floating toolbar to change opacity, scale, position, or visibility.
+
+If you have not pasted yet, click the Frameview icon in the Chrome toolbar. That popup explains copy and paste. The overlay toolbar only appears after an image is pasted.
 
 The overlay does not block clicks. The page stays interactive, and the image scrolls with the document.
 
@@ -93,6 +95,9 @@ src/
       Overlay.tsx          Reference image.
       Toolbar.tsx          Opacity, scale, position, hide, remove.
       overlay.css          Isolated toolbar and overlay styles.
+  popup/
+    index.html             How-to shown before the first paste.
+    popup.css
   background/
     service-worker.ts      Lightweight MV3 worker. Reserved for future commands.
   shared/
